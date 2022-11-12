@@ -1,10 +1,10 @@
 function singleNumber(nums: number[]): number {
-  return nums.reduce((pv: number, cv: number) => {
-    console.log("pv: ", pv);
-    console.log("cv: ", cv);
-    pv ^= cv;
-    return pv;
-  }, 0);
+  let result: number = 0;
+
+  for (let i: number = 0; i < nums.length; i++) {
+    result ^= nums[i];
+  }
+  return result;
 }
 
 console.log(singleNumber([1, 3, 1, -1, 3]));
